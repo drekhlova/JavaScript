@@ -45,8 +45,9 @@ const initialData = [
 const userInput = document.querySelector(".user_input");
 const button = document.querySelector(".btn");
 const reviews = document.querySelector(".reviews");
-const divError = document.querySelector(".error_msg");
+const errorBlock = document.querySelector(".error_msg");
 
+//Задаем заголовки и абзацы для отзывов в initialData
 initialData.forEach((element) => {
   const productName = document.createElement("h3");
   productName.textContent = element.product;
@@ -61,16 +62,22 @@ initialData.forEach((element) => {
 button.addEventListener("click", function () {
   try {
     if (
-      userInput.value.trim().length < 20 ||
+      userInput.value.trim().length < 50 ||
       userInput.value.trim().length > 500
     ) {
-      throw new Error("Несоответствующая длина текста");
+      throw new Error(
+        alert(
+          "Длина вашего отзыва должна быть не менее 50 и не более 500 символов."
+        )
+      );
     }
     const reviewElem = document.createElement("p");
     reviewElem.textContent = userInput.value;
     reviews.appendChild(reviewElem);
-    divError.textContent = "";
+    errorBlock.textContent = "";
   } catch (error) {
-    divError.textContent = error.message;
+    errorBlock.textContent = error.message;
   }
+  //Очищаем поле ввода
+  document.querySelector(".user_input").value = "";
 });
