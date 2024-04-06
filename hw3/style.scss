@@ -1,0 +1,31 @@
+a {
+  text-decoration: none;
+}
+
+.decor {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+.input_form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.product_name {
+  width: 300px;
+}
+
+.reviews {
+  width: 500px;
+}
+
+.btn {
+  width: 100px;
+}
