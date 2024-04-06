@@ -31,6 +31,8 @@ if (btnEl) {
     } catch (error) {
       alert(`${error}`);
     }
+    inputItem.value = "";
+    inputReview.value = "";
   }
 
   btnEl.addEventListener("click", sendReview);
